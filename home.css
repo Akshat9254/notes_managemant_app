@@ -1,0 +1,15 @@
+:root {
+    --navbar-height: 10vh;
+}
+
+.navbar {
+    height: var(--navbar-height);
+}
+
+.main-section {
+    height: calc(100vh - var(--navbar-height));
+}
+
+.welcome-image {
+    height: 70%;
+}
