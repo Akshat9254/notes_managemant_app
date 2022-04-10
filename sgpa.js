@@ -5,17 +5,17 @@ const calcBtn = document.getElementById('calculate')
 
 addBtn.addEventListener('click', () => {
     const trArr = document.querySelectorAll('.tr')
-    console.log(trArr.length)
-    const courseTitle = document.getElementById('course_title').value
-    const courseCode = document.getElementById('course_code').value
-    const courseCredit = document.getElementById('course_credit').value
-    const score = document.getElementById('score').value
+
+    let courseTitle = document.getElementById('course_title').value
+    let courseCode = document.getElementById('course_code').value
+    let courseCredit = document.getElementById('course_credit').value
+    let gradePoint = document.getElementById('grade_point').value
 
     // console.log('Tile ', courseTitle)
     // console.log('Code ', courseCode)
     // console.log('Credit ', courseCredit)
 
-    if(courseTitle && courseCode && courseCredit && score) {
+    if(courseTitle && courseCode && courseCredit && gradePoint) {
         const tableRow = document.createElement('tr')
         tableRow.classList.add('tr')
         
@@ -36,16 +36,16 @@ addBtn.addEventListener('click', () => {
         creditData.innerText = courseCredit
         tableRow.appendChild(creditData)
 
-        const scoreData = document.createElement('td')
-        scoreData.innerText = score
-        tableRow.appendChild(scoreData)
+        const gradePointData = document.createElement('td')
+        gradePointData.innerText = gradePoint
+        tableRow.appendChild(gradePointData)
 
         tbody.appendChild(tableRow)
 
         courseTitle = ""
         courseCode = ""
         courseCredit = ""
-        score = ""
+        gradePoint = ""
 
     }
 })
@@ -53,11 +53,19 @@ addBtn.addEventListener('click', () => {
 calcBtn.addEventListener('click', () => {
     const trArr = document.querySelectorAll('.tr')
     let num = 0
-    let den = 0
+    let deno = 0
 
     for(let i = 0; i < trArr.length; i++) {
-        console.log(trArr[i])
+        console.log(trArr[i].childNodes)
+        num += parseInt(trArr[i].childNodes[3].innerText) * parseInt(trArr[i].childNodes[4].innerText)
+        deno += parseInt(trArr[i].childNodes[3].innerText)
     }
+
+    console.log({num, deno})
+    const sgpa = (num/deno).toFixed(2)
+    console.log(sgpa)
+
+    document.getElementById('calculated_sgpa').innerText = `Your SGPA is ${sgpa}`
 
 })
 

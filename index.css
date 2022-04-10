@@ -38,6 +38,12 @@ button {
     cursor: pointer;
 }
 
+.container {
+    width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
 /* color classes */
 .bg-primary{
     background-color: var(--primary);
@@ -320,9 +326,9 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30rem;
+    height: 18rem;
     border: 2px solid black;
-    width: 25rem;
+    width: 22rem;
 }
 
 .card-img {
@@ -332,5 +338,18 @@ button {
 .card-body {
     height: 60%;
 } 
+
+.card-body {
+    padding-top: calc(1 * var(--spacer));
+    padding-bottom: calc(1 * var(--spacer));
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-text {
+    text-align: center;
+}
 
 
