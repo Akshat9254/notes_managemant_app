@@ -1,5 +1,5 @@
 <?php
-    include 'connection.php';
+    include 'includes/connection.php';
 
     if(isset($_POST['login'])) {
         $email = $_POST['email'];
@@ -17,6 +17,8 @@
                     session_start();
                     $_SESSION['isLoggedIn'] = true;
                     $_SESSION['username'] = $row['name'];
+                    // $name = $_SESSION['username'];
+                    // echo "<script>console.log('$name')</script>";
                     header("location: index.php");
                 } else {
                     echo "<script>alert('Invalid Credentails')</script>";
@@ -28,7 +30,7 @@
     }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,7 +38,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <title>Login</title>
-</head>
+</head> -->
+
+<?php include 'includes/header.php'; ?>
 <body>
     <form class="loginWrapper" method="post">
         <h2 class="loginHeading">Login</h2>

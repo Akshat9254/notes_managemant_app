@@ -1,5 +1,5 @@
 <?php
-    include 'connection.php';
+    include 'includes/connection.php';
 
     if(isset($_POST['signup'])) {
         $name = $_POST['name'];
@@ -26,25 +26,10 @@
         } else {
             echo "<script>alert('Password and Confirm Password does not match')</script>";
         }
-
-        // if($conn->query($sql_query) == true) {
-        //     echo "User Registered Successfully";
-        // } else {
-        //     echo $conn->error;
-        // }
-
     }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
-    <title>Login</title>
-</head>
+<?php include 'includes/header.php'; ?>
 <body>
     <form class="loginWrapper" method="post">
         <h2 class="loginHeading">Sign Up</h2>

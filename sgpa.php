@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sgpa.css">
-    <title>SGPA Calculator</title>
-</head>
-
+<?php include 'includes/header.php'; ?>
 <body>
-    <h1>SGPA Calculator</h1>
-    <div class="inputWrapper">
-        <input type="text" placeholder="Course Title" id="course_title">
-        <input type="text" placeholder="Course Code" id="course_code">
-        <input type="number" placeholder="Course Credit" id="course_credit">
-        <input type="number" placeholder="Grade Point" id="grade_point">
-        <button id="add">Add</button>
+    <?php include 'includes/navbar.php'; ?>
+
+    <section class="main-section d-flex-column py-5 px-5 align-items-center flex-gap-4">
+    <h1 class="text-center fs-1 mb-4">SGPA Calculator</h1>
+    <div class="inputWrapper d-flex flex-gap-4">
+        <input type="text" placeholder="Course Title" id="course_title" class="form-control">
+        <input type="text" placeholder="Course Code" id="course_code" class="form-control">
+        <input type="number" placeholder="Course Credit" id="course_credit" class="form-control">
+        <input type="number" placeholder="Grade Point" id="grade_point" class="form-control">
+        <button id="add" class="btn btn-primary">Add</button>
     </div>
 
     <table class="table">
@@ -54,18 +47,15 @@
         </tbody>
       </table>
 
-      <button id="calculate">Calculate</button>
+      <button id="calculate" class="btn btn-primary">Calculate</button>
 
       <h3 id="calculated_sgpa"></h3>
+</section>
 
-
+      <?php include 'includes/footer.php'; ?>
 
       <script src="sgpa.js"></script>
 
-    <script>
-        // const n = Number(prompt())
-
-    </script>
 </body>
 
 </html>
